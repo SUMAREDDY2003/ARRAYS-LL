@@ -1,0 +1,64 @@
+package myproject.basics;
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class RemovingDuplicates {
+	 public static void printLinkedList(ListNode head) {
+	        ListNode current = head;
+	        while (current != null) {
+	            System.out.print(current.val + "->");
+	            current = current.next;
+	        }
+	        System.out.print("null\n");
+	    }
+
+	    public static ListNode removeDuplicates(ListNode head) {
+	        if (head == null) {
+	            return null;
+	        }
+
+	        ListNode current = head;
+	        while (current != null && current.next != null) {
+	            if (current.val == current.next.val) {
+	                current.next = current.next.next; // Skip the duplicate node
+	            } else {
+	                current = current.next; // Move to the next node
+	            }
+	        }
+
+	        return head;
+	    }
+    public static void main(String[] args) {
+    	
+        ListNode head = createLinkedList(new int[]{2, 5, 12, 2, 3, 5, 1, 2, 5, 5});
+        ListNode updatedList = removeDuplicates(head);
+        printLinkedList(updatedList);
+    }
+
+    public static ListNode createLinkedList(int[] arr) {
+        ListNode head = null;
+        ListNode tail = null;
+        for (int num : arr) {
+            ListNode newNode = new ListNode(num);
+            if (head == null) {
+                head = newNode;
+                tail = head;
+            } else {
+                tail.next = newNode;
+                tail = tail.next;
+            }
+        }
+        return head;
+    }
+
+   
+}
+

@@ -1,0 +1,33 @@
+package myproject.basics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MissingNum {
+	 public static List<Integer> MissingNumbers(int[] arr) {
+	        List<Integer> missingNumbers = new ArrayList<>();
+	        int currentNumber = arr[0];
+
+	        for (int i = 0; i < arr.length; i++) {
+	            while (currentNumber < arr[i]) {
+	                missingNumbers.add(currentNumber);
+	                currentNumber++;
+	            }
+	            currentNumber++; // Move to the next number
+	        }
+
+	        return missingNumbers;
+	 }
+    public static void main(String[] args) {
+        int[] arrNum1 = {1, 2, 4, 5, 6};
+        List<Integer> m1 = MissingNumbers(arrNum1);
+        System.out.println("Missing: " + m1);
+
+        int[] arrNum2 = {1, 2, 3, 5, 6, 8, 10, 11, 14};
+        List<Integer> m2 = MissingNumbers(arrNum2);
+        System.out.println("Missing: " + m2);
+    }
+
+   
+    
+}

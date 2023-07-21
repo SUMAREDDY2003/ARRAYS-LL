@@ -1,0 +1,43 @@
+package DSA;
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Deque{
+    public static void main(String[] args) {
+        
+        Deque<Integer> deque = new ArrayDeque<>();
+
+        
+        deque.addFirst(1); 
+        deque.addLast(2);  
+        deque.offerFirst(3); 
+
+        System.out.println("First element: " + deque.getFirst()); 
+        System.out.println("Last element: " + deque.getLast());  
+
+      
+        int removedFirst = deque.removeFirst(); 
+        int removedLast = deque.removeLast();   
+
+        System.out.println("Removed first element: " + removedFirst); 
+        System.out.println("Removed last element: " + removedLast);   
+
+        
+        deque.add(4);
+        deque.add(5);
+        for (int num : deque) {
+            System.out.print(num + " "); 
+        }
+        System.out.println();
+
+       
+        System.out.println("Is Deque empty? " + deque.isEmpty()); 
+
+        
+        System.out.println("Size of Deque: " + deque.size()); 
+
+        
+        deque.clear();
+        System.out.println("Is Deque empty after clearing? " + deque.isEmpty()); 
+    }
+}

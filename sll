@@ -1,0 +1,53 @@
+package DSA;
+
+public class Creationsll
+{
+	class Node{
+	  	  int data;
+	  	  Node next;
+	  	  public Node(int data) {
+	  		  this.data=data;
+	  		  this.next=null;
+	  	  }
+	}   
+public Node head=null,temp=null;
+
+	    public void addNode(int data) {
+		  	  Node newNode=new Node(data);
+		  	  if(head==null) {
+		  		  head=newNode;
+		  		  temp=newNode;
+		  	  }
+		  	  else {
+		  		  temp.next=newNode;
+		  		  temp=newNode;
+		  	  }
+		    }
+	    public void display() {
+	  	  Node temp=head;
+	  	  if(head==null) {
+	  		  System.out.println("SINGLE LINKED LIST IS EMPTY!");
+	  		  return;
+	  	  }
+	  	  System.out.println("Nodes of singlelinkedlist are:");
+	  	  while(temp!=null) {
+	  		  System.out.print(temp.data+"->");
+	  		  temp=temp.next;
+	  	  }
+	  	  System.out.println();
+	    }
+	    
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Creationsll sll=new Creationsll();
+		sll.addNode(1);
+		sll.addNode(2);
+		sll.addNode(3);
+		sll.addNode(4);
+        sll.display();
+	}
+
+}

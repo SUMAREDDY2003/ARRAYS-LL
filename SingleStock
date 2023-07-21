@@ -1,0 +1,32 @@
+package myproject.basics;
+import java.util.HashMap;
+
+	public class SingleStock {
+		 public static int countSocks(int[] arr) {
+		        
+		        HashMap<Integer, Integer> sockFrequency = new HashMap<>();
+
+		        
+		        for (int sockId : arr) {
+		            sockFrequency.put(sockId, sockFrequency.getOrDefault(sockId, 0) + 1);
+		        }
+
+		        int singularSocksCount = 0;
+		        for (int freq : sockFrequency.values()) {
+		            if (freq % 2 != 0) {
+		                singularSocksCount++;
+		            }
+		        }
+
+		        return singularSocksCount;
+		    }
+	    public static void main(String[] args) {
+	        int[] arrNum = {10, 20, 20, 10, 10, 30, 50, 10, 20};
+	        int count = countSocks(arrNum);
+	        System.out.println("singular socks are : " + count);
+	    }
+
+	   
+	}
+
+

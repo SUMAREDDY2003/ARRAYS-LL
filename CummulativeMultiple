@@ -1,0 +1,40 @@
+package myproject.basics;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Cummulative {
+	
+	public static void multiple(int[] arr) {
+        try {
+            if (arr.length == 0) {
+                throw new IllegalArgumentException("Array cannot be empty.");
+            }
+
+            int cum = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                cum *= arr[i];
+                arr[i] = cum;
+            }
+        } catch (Exception e) {
+            System.err.println("An error occurred: " + e.getMessage());
+        }
+    }
+    public static void main(String[] args) {
+    	Scanner sc=new Scanner(System.in);
+    	int n=sc.nextInt();
+        int[] arrNum=new int[n];
+        for(int i=0;i<n;i++) {
+        	 
+                 arrNum[i] = sc.nextInt();
+             }
+       	
+        multiple(arrNum);
+        System.out.println("Output: arrNum = " + Arrays.toString(arrNum));
+    }
+
+    
+}
+
+
+
+

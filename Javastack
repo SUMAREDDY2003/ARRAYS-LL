@@ -1,0 +1,48 @@
+package DSA;
+import java.util.Scanner;
+
+public class Stack {
+  int maxsize=10;
+  int arr[]=new int[maxsize];
+  int top;
+  Stack() {
+	  int top=-1;
+  }
+  boolean push(Scanner sc) {
+	  if(top==maxsize-1) {
+		  System.out.println("Stack overflow");
+		  return false;
+	  }
+	  else {
+		  System.out.println("enter element: ");
+		  int val=sc.nextInt();
+		  top++;
+		  arr[top]=val;
+		  System.out.println("item pushed");
+		  return true;
+		  
+	  }
+	  }
+  boolean pop() {
+	  if(top<0) {
+		  System.out.println("Stack underfow");
+		  return false;
+	  }
+	  else {
+		  System.out.println("deleted element:"+arr[top]);
+		  top--;
+		  System.out.println("item poped");
+		  return true;
+	  }
+  }
+  void display() {
+	  System.out.println("Elements in stack are:");
+	  for(int i=top;i>0;i--) {
+		 System.out.println(arr[i]); 
+	  }
+  }
+  void top() {
+	  System.out.println(arr[top]);
+  }
+  
+  }

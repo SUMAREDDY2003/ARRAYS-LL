@@ -1,0 +1,50 @@
+package DSA;
+
+import java.util.LinkedList;
+
+public class Enque{
+    private LinkedList<Integer> queueList;
+
+    public Enque() {
+        queueList = new LinkedList<>();
+    }
+
+   
+    public void enqueue(int value) {
+        queueList.add(value);
+    }
+
+    
+    public int dequeue() {
+        if (!isEmpty()) {
+            return queueList.removeFirst();
+        } else {
+            throw new IllegalStateException("Queue is empty");
+        }
+    }
+
+    public boolean isEmpty() {
+        return queueList.isEmpty();
+    }
+
+    public int size() {
+        return queueList.size();
+    }
+
+    public static void main(String[] args) {
+        Enque queue = new Enque();
+        // Enqueue (Add) elements to the Queue
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        queue.enqueue(50);
+
+       
+        while (!queue.isEmpty()) {
+            int element = queue.dequeue();
+            System.out.print(element + " ");
+        }
+    }
+}
+
